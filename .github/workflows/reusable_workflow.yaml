@@ -1,0 +1,22 @@
+# Простейший reusable workflow (можно вызывать из других workflow через workflow_call)
+name: Reusable Basic Workflow
+
+on:
+  workflow_call:
+    inputs:
+      message:
+        type: string
+        description: "Сообщение для вывода"
+        required: false
+        default: "Hello from reusable workflow!"
+
+jobs:
+  echo-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Шаг 1
+        run: echo "${{ inputs.message }}"
+      - name: Шаг 2
+        run: echo "Шаг 2"
+      - name: Шаг 3
+        run: echo "Шаг 3"              
