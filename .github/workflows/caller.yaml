@@ -1,0 +1,15 @@
+name: Call Reusable Basic
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-reusable:
+    uses: ./.github/workflows/reusable_workflow.yaml
+    with:
+      message: "Привет, x!"
+  main-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Шаг из вызывающего workflow
+        run: echo "Логи из вызывающего workflow"
