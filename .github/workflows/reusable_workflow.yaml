@@ -12,7 +12,7 @@ on:
 
 jobs:
   echo-message:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest123
     steps:
       - name: Шаг 1
         run: echo "${{ inputs.message }}"
